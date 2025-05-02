@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Header {
+  id             String   @id @default(uuid())
+  name           String   @unique
+  contactBtnText String
+  contactBtnUrl  String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+}
+
+model Hero {
+  id              String   @id @default(uuid())
+  profileImageUrl String
+  headline        String
+  subHeadline     String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now())
+}
+
+model HeroBtn {
+  id             String   @id @default(uuid())
+  contactBtnText String
+  contactBtnUrl  String
+  cvBtn          String
+  cvBtnUrl       String
+  githubText     String
+  githubUrl      String
+  linkedInText   String
+  linkedInUrl    String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+}
