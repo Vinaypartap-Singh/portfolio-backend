@@ -1,5 +1,5 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { IsOptional, IsString } from 'class-validator';
+import { IsOptional, IsString, IsUrl } from 'class-validator';
 import { CreateHeaderDto } from './create-header.dto';
 
 export class UpdateHeaderDto extends PartialType(CreateHeaderDto) {
@@ -12,6 +12,6 @@ export class UpdateHeaderDto extends PartialType(CreateHeaderDto) {
   contactBtnText: string;
 
   @IsOptional()
-  @IsString()
+  @IsUrl()
   contactBtnUrl: string;
 }

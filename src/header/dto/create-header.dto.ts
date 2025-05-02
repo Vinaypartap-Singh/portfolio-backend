@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsUrl } from 'class-validator';
 
 export class CreateHeaderDto {
   @IsString()
@@ -9,7 +9,7 @@ export class CreateHeaderDto {
   @IsNotEmpty()
   contactBtnText: string;
 
-  @IsString()
+  @IsUrl()
   @IsNotEmpty()
   contactBtnUrl: string;
 }
